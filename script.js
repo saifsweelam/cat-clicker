@@ -18,11 +18,11 @@ function increase_counter(id) {
 }*/
 
 var cats = [
-    { name: 'Andy', url: 'https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426', alt: 'A photo of a young cat staring.' },
-    { name: 'Sam', url: 'https://lh3.ggpht.com/kixazxoJ2ufl3ACj2I85Xsy-Rfog97BM75ZiLaX02KgeYramAEqlEHqPC3rKqdQj4C1VFnXXryadFs1J9A=s0#w=640&h=496', alt: 'A photo of a shy cat hiding.' },
-    { name: 'Lara', url: 'https://lh5.ggpht.com/LfjkdmOKkGLvCt-VuRlWGjAjXqTBrPjRsokTNKBtCh8IFPRetGaXIpTQGE2e7ZCUaG2azKNkz38KkbM_emA=s0#w=640&h=454', alt: 'A photo of a lying cat' },
-    { name: 'Stitch', url: 'https://i.ibb.co/DK4KyJr/stitch.jpg', alt: 'A photo of a beautiful cat!' },
-    { name: 'Soska', url: "https://farm1.staticflickr.com/969/41428417955_03d64e2a02_b.jpg", alt: 'A photo of a laughing cat.' }
+    { name: 'Andy', url: 'https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426', alt: 'A photo of a young cat staring.', counter: 0 },
+    { name: 'Sam', url: 'https://lh3.ggpht.com/kixazxoJ2ufl3ACj2I85Xsy-Rfog97BM75ZiLaX02KgeYramAEqlEHqPC3rKqdQj4C1VFnXXryadFs1J9A=s0#w=640&h=496', alt: 'A photo of a shy cat hiding.', counter: 0 },
+    { name: 'Lara', url: 'https://lh5.ggpht.com/LfjkdmOKkGLvCt-VuRlWGjAjXqTBrPjRsokTNKBtCh8IFPRetGaXIpTQGE2e7ZCUaG2azKNkz38KkbM_emA=s0#w=640&h=454', alt: 'A photo of a lying cat', counter: 0 },
+    { name: 'Stitch', url: 'https://i.ibb.co/DK4KyJr/stitch.jpg', alt: 'A photo of a beautiful cat!', counter: 0 },
+    { name: 'Soska', url: "https://farm1.staticflickr.com/969/41428417955_03d64e2a02_b.jpg", alt: 'A photo of a laughing cat.', counter: 0 }
 ];
 
 var sidebar = document.querySelector('aside');
@@ -38,15 +38,15 @@ var card_html
 var card = document.querySelector('.card')
 function viewCat(i) {
     var cat = cats[i]
-    card_html = `<figure><img src="${cat.url}" alt="${cat.alt}" class="photo"><figcaption>${cat.name}</figcaption></figure><div><p>You clicked the photo</p><span class="counter" id="c1">0</span> times</div>`
+    card_html = `<figure><img src="${cat.url}" alt="${cat.alt}" class="photo"><figcaption>${cat.name}</figcaption></figure><div><p>You clicked the photo</p><span class="counter" id="c1">${cat.counter}</span> times</div>`
     card.innerHTML = card_html
     var image = document.querySelector('.photo')
 
     image.addEventListener('click', function () {
         var text = document.querySelector('.counter');
-        var counter = parseInt(text.textContent)
-        counter += 1
-        text.textContent = counter
+        cat.counter += 1
+        cats[i] = cat
+        text.textContent = cat.counter
     }, false)
 }
 
