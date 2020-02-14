@@ -90,3 +90,53 @@ aside {
 .selected img {
     filter: brightness(50%);
 }
+
+form {
+    width: 50vw;
+    height: auto;
+    position: fixed;
+    top: 20vw;
+    left: 25vw;
+    z-index: 1000005;
+    margin: auto;
+    font-size: 16px;
+	background: rgb(238, 166, 85);
+	padding: 30px 30px 15px 30px;
+	border: 5px solid rgb(241, 109, 0);
+}
+
+form label, form input {
+    max-width: 100%;
+}
+
+form label {
+    width: 10%;
+}
+
+form input[type="text"] {
+    width: 90%;
+}
+
+button {
+    background-color: rgb(241, 109, 0);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
