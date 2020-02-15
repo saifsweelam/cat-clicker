@@ -1,12 +1,14 @@
 var model = {
     init: function () {
-        localStorage.cats = JSON.stringify([
-            { name: 'Andy', url: 'https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426', alt: 'A photo of a young cat staring.', counter: 0 },
-            { name: 'Sam', url: 'https://lh3.ggpht.com/kixazxoJ2ufl3ACj2I85Xsy-Rfog97BM75ZiLaX02KgeYramAEqlEHqPC3rKqdQj4C1VFnXXryadFs1J9A=s0#w=640&h=496', alt: 'A photo of a shy cat hiding.', counter: 0 },
-            { name: 'Lara', url: 'https://lh5.ggpht.com/LfjkdmOKkGLvCt-VuRlWGjAjXqTBrPjRsokTNKBtCh8IFPRetGaXIpTQGE2e7ZCUaG2azKNkz38KkbM_emA=s0#w=640&h=454', alt: 'A photo of a lying cat', counter: 0 },
-            { name: 'Stitch', url: 'https://i.ibb.co/DK4KyJr/stitch.jpg', alt: 'A photo of a beautiful cat!', counter: 0 },
-            { name: 'Soska', url: "https://farm1.staticflickr.com/969/41428417955_03d64e2a02_b.jpg", alt: 'A photo of a laughing cat.', counter: 0 }
-        ]);
+        if (!localStorage.cats) {
+            localStorage.cats = JSON.stringify([
+                { name: 'Andy', url: 'https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426', alt: 'A photo of a young cat staring.', counter: 0 },
+                { name: 'Sam', url: 'https://lh3.ggpht.com/kixazxoJ2ufl3ACj2I85Xsy-Rfog97BM75ZiLaX02KgeYramAEqlEHqPC3rKqdQj4C1VFnXXryadFs1J9A=s0#w=640&h=496', alt: 'A photo of a shy cat hiding.', counter: 0 },
+                { name: 'Lara', url: 'https://lh5.ggpht.com/LfjkdmOKkGLvCt-VuRlWGjAjXqTBrPjRsokTNKBtCh8IFPRetGaXIpTQGE2e7ZCUaG2azKNkz38KkbM_emA=s0#w=640&h=454', alt: 'A photo of a lying cat', counter: 0 },
+                { name: 'Stitch', url: 'https://i.ibb.co/DK4KyJr/stitch.jpg', alt: 'A photo of a beautiful cat!', counter: 0 },
+                { name: 'Soska', url: "https://farm1.staticflickr.com/969/41428417955_03d64e2a02_b.jpg", alt: 'A photo of a laughing cat.', counter: 0 }
+            ]);
+        }
     },
     getAllCats: function () {
         return JSON.parse(localStorage.cats);
@@ -19,7 +21,7 @@ var model = {
         localStorage.cats = JSON.stringify(data);
         return cat;
     },
-    modifyCat: function(i, newCat) {
+    modifyCat: function (i, newCat) {
         var data = JSON.parse(localStorage.cats);
         data[i] = newCat
         localStorage.cats = JSON.stringify(data);
@@ -40,7 +42,7 @@ var octopus = {
         var cat = model.increaseCounter(i);
         return cat.counter;
     },
-    updateCat: function(i, newCat) {
+    updateCat: function (i, newCat) {
         model.modifyCat(i, newCat);
         view.renderSidebar()
         view.renderPhoto(i)
@@ -107,7 +109,7 @@ var view = {
             var body = document.querySelector('body');
             body.insertAdjacentHTML('beforeend', '<div id="overlay"></div>');
             var overlay = document.querySelector('#overlay')
-            overlay.addEventListener('click', function() {
+            overlay.addEventListener('click', function () {
                 view.removeAdminTools()
             })
             var cats = octopus.getCats();
@@ -124,7 +126,7 @@ var view = {
             this.card.insertAdjacentHTML('beforeend', html);
 
             var form = document.querySelector('#admin-form')
-            form.addEventListener('submit', function(e) {
+            form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 view.removeAdminTools();
                 var elements = form.elements;
