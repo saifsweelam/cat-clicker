@@ -96,10 +96,8 @@ var view = {
     },
     photoCallback: function (i) {
         var text = document.querySelector('.counter');
-        var cats = octopus.getCats();
-        var cat = cats[i];
-        counter = octopus.increment(i);
-        text.textContent = cat.counter;
+        var counter = octopus.increment(i);
+        text.textContent = counter;
     },
     adminTools: function (i) {
         if (!!document.querySelector('#admin-form')) {

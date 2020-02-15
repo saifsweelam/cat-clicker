@@ -117,11 +117,13 @@ form input[type="text"] {
     width: 90%;
 }
 
-button {
+button, input[type="button"], input[type="submit"] {
     background-color: rgb(241, 109, 0);
     border: none;
     color: white;
     padding: 15px 32px;
+    margin-right: 1em;
+    margin-bottom: 1em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -139,4 +141,10 @@ button {
     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
-  }
+}
+
+@media screen and (max-width:500px) {
+    form label{
+        width: 100%;
+    }
+}
