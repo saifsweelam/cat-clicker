@@ -42,6 +42,7 @@ var octopus = {
     },
     updateCat: function(i, newCat) {
         model.modifyCat(i, newCat);
+        view.renderSidebar()
         view.renderPhoto(i)
     }
 };
