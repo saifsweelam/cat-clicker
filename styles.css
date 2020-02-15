@@ -147,4 +147,14 @@ button, input[type="button"], input[type="submit"] {
     form label{
         width: 100%;
     }
+
+    .item {
+        height: 4em;
+    }
+
+    aside {
+        width: 40%;
+        margin: 0;
+        margin-top: 2em;
+    }
 }
