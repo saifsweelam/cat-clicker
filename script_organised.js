@@ -2,9 +2,9 @@ var model = {
     init: function () {
         if (!localStorage.cats) {
             localStorage.cats = JSON.stringify([
-                { name: 'Andy', url: 'https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426', alt: 'A photo of a young cat staring.', counter: 0 },
-                { name: 'Sam', url: 'https://lh3.ggpht.com/kixazxoJ2ufl3ACj2I85Xsy-Rfog97BM75ZiLaX02KgeYramAEqlEHqPC3rKqdQj4C1VFnXXryadFs1J9A=s0#w=640&h=496', alt: 'A photo of a shy cat hiding.', counter: 0 },
-                { name: 'Lara', url: 'https://lh5.ggpht.com/LfjkdmOKkGLvCt-VuRlWGjAjXqTBrPjRsokTNKBtCh8IFPRetGaXIpTQGE2e7ZCUaG2azKNkz38KkbM_emA=s0#w=640&h=454', alt: 'A photo of a lying cat', counter: 0 },
+                { name: 'Andy', url: 'https://californiaherps.com/images/yards/AndyCat3.jpeg', alt: 'A photo of a young cat staring.', counter: 0 },
+                { name: 'Sam', url: 'https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg', alt: 'A photo of a shy cat hiding.', counter: 0 },
+                { name: 'Lara', url: 'https://hips.hearstapps.com/hmg-prod/images/neva-masquerade-royalty-free-image-1674509896.jpg?crop=0.8109xw:1xh;center,top&resize=1200:*', alt: 'A photo of a lying cat', counter: 0 },
                 { name: 'Stitch', url: 'https://i.ibb.co/DK4KyJr/stitch.jpg', alt: 'A photo of a beautiful cat!', counter: 0 },
                 { name: 'Soska', url: "https://farm1.staticflickr.com/969/41428417955_03d64e2a02_b.jpg", alt: 'A photo of a laughing cat.', counter: 0 }
             ]);
